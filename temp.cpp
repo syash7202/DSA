@@ -112,39 +112,40 @@
 // }
 
 
-// Max & MIn in an array 
+// // Max & MIn in an array 
 
-int arr[5];
-srand(time(0));
-cout<<"Array is : ";
-for (int i = 0; i < 5; i++)
-{
-    arr[i]= rand()%10;
+// int arr[5];
+// srand(time(0));
+// cout<<"Array is : ";
+// for (int i = 0; i < 5; i++)
+// {
+//     arr[i]= rand()%10;
    
-    cout<<arr[i]<<" ";
-}
+//     cout<<arr[i]<<" ";
+// }
 
-cout<<endl;
+// cout<<endl;
 
-int min = INT16_MAX, max=INT16_MIN;
+// int min = INT16_MAX, max=INT16_MIN;
 
-for (int i = 0; i < 5; i++)
-{
-    if (arr[i]>max)
-    {
-        max=arr[i];
-    }
-    if (arr[i]<min)
-    {
-        min=arr[i];
-    }
+// for (int i = 0; i < 5; i++)
+// {
+//     if (arr[i]>max)
+//     {
+//         max=arr[i];
+//     }
+//     if (arr[i]<min)
+//     {
+//         min=arr[i];
+//     }
     
     
-}
-cout<<"Max : "<<max<<endl;
-cout<<"Min : "<<min<<endl;
+// }
+// cout<<"Max : "<<max<<endl;
+// cout<<"Min : "<<min<<endl;
 
 
+// Reverse an array 
 
 
 
