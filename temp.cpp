@@ -145,17 +145,6 @@
 // cout<<"Min : "<<min<<endl;
 
 
-// Reverse an array 
-
-
-
-
-
-
-
-
-
-
 
      return 0;
 
