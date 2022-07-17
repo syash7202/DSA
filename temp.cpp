@@ -94,9 +94,55 @@
 
 
 
+// Number of 1's bits
+
+// while (n!=0)
+// {
+    
+// }
 
 
+// Initialization of an array with any single value using STL -> fill_n function 
 
+// int a [10];
+// fill_n(a,10,1);
+// for(auto i : a)
+// {
+    // cout << i << " ";
+// }
+
+
+// Max & MIn in an array 
+
+int arr[5];
+srand(time(0));
+cout<<"Array is : ";
+for (int i = 0; i < 5; i++)
+{
+    arr[i]= rand()%10;
+   
+    cout<<arr[i]<<" ";
+}
+
+cout<<endl;
+
+int min = INT16_MAX, max=INT16_MIN;
+
+for (int i = 0; i < 5; i++)
+{
+    if (arr[i]>max)
+    {
+        max=arr[i];
+    }
+    if (arr[i]<min)
+    {
+        min=arr[i];
+    }
+    
+    
+}
+cout<<"Max : "<<max<<endl;
+cout<<"Min : "<<min<<endl;
 
 
 
