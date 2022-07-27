@@ -3,6 +3,7 @@
 #include<deque>
 #include<list>
 #include<stack>
+#include<queue>
 using namespace std;
 
 
@@ -108,21 +109,31 @@ int main()
 
     // cout<<"\nSize of list : "<< l.size()<<endl;
     
-    stack<string> s;
-    s.push("Yash");
-    s.push("Sharma");
-    s.push("Go");
+    // stack<string> s;
+    // s.push("Yash");
+    // s.push("Sharma");
+    // s.push("Go");
 
-    cout<<"\nTop element : "<<s.top();
+    // cout<<"\nTop element : "<<s.top();
 
-    s.pop();
+    // s.pop();
 
-    cout<<"\nTop element : "<<s.top();
-    cout<<"\nSize of stack : "<<s.size();
+    // cout<<"\nTop element : "<<s.top();
+    // cout<<"\nSize of stack : "<<s.size();
 
-    cout<<"\nEmpty or not : "<<s.empty();
+    // cout<<"\nEmpty or not : "<<s.empty();
+    // cout<<endl;
+
+    queue<string> q;
+    q.push("Yash");
+    q.push("Sharma");
+    q.push("Go");
+
+    cout<<"\nFirst Element : "<< q.front();
+    q.pop();
+    cout<<"\nFirst Element : "<< q.front();
+
     cout<<endl;
-
 
 
 
