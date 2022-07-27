@@ -2,6 +2,7 @@
 #include<vector>
 #include<deque>
 #include<list>
+#include<stack>
 using namespace std;
 
 
@@ -89,22 +90,49 @@ int main()
     // }
     // cout<<endl;
 
-    list<int> l;
-    l.push_back(1);
-    l.push_front(2);
-    for(int i:l)
-    {
-        cout <<i<<" ";
-    }
-    cout << endl;
-    l.erase(l.begin());
-    cout <<"after erase"<< endl;
-    for(int i:l)
-    {
-        cout <<i<<"";
-    }
+    // list<int> l;
+    // l.push_back(1);
+    // l.push_front(2);
+    // for(int i:l)
+    // {
+    //     cout <<i<<" ";
+    // }
+    // cout << endl;
+    // l.erase(l.begin());
+    // cout <<"after erase"<< endl;
+    // for(int i:l)
+    // {
+    //     cout <<i<<"";
+    // }
 
 
-    cout<<"\nSize of list : "<< l.size()<<endl;
+    // cout<<"\nSize of list : "<< l.size()<<endl;
+    
+    stack<string> s;
+    s.push("Yash");
+    s.push("Sharma");
+    s.push("Go");
+
+    cout<<"\nTop element : "<<s.top();
+
+    s.pop();
+
+    cout<<"\nTop element : "<<s.top();
+    cout<<"\nSize of stack : "<<s.size();
+
+    cout<<"\nEmpty or not : "<<s.empty();
+    cout<<endl;
+
+
+
+
+    
+    
+    
+    
+    
+    
+    
+    
     return 0;
 }
