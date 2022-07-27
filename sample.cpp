@@ -172,39 +172,39 @@ int main()
     
     // set works on the BTS, only insert and delete options are available, no modifications in ordered set data is returned in sorted order. Only unique values are stored in a set.
 
-    set<int> s;
+    // set<int> s;
 
-    s.insert(5);
-    s.insert(5);
-    s.insert(5);
-    s.insert(5);
-    s.insert(1);
-    s.insert(1);
-    s.insert(1);
-    s.insert(1);
-    s.insert(6);
-    s.insert(6);
-    s.insert(6);
-    s.insert(6);
-    s.insert(6);
-    s.insert(6);
+    // s.insert(5);
+    // s.insert(5);
+    // s.insert(5);
+    // s.insert(5);
+    // s.insert(1);
+    // s.insert(1);
+    // s.insert(1);
+    // s.insert(1);
+    // s.insert(6);
+    // s.insert(6);
+    // s.insert(6);
+    // s.insert(6);
+    // s.insert(6);
+    // s.insert(6);
 
-    for(auto i : s)
-    {
-        cout<<i<<endl;
-    }
+    // for(auto i : s)
+    // {
+    //     cout<<i<<endl;
+    // }
 
-    set<int>::iterator it =s.begin();
-    it++;
+    // set<int>::iterator it =s.begin();
+    // it++;
 
-    s.erase(it);
+    // s.erase(it);
 
-    for(auto i : s)
-    {
-        cout<<i<<endl;
-    }
+    // for(auto i : s)
+    // {
+    //     cout<<i<<endl;
+    // }
 
-    cout<<"5 present or not : "<<s.count(5)<<endl;
+    // cout<<"5 present or not : "<<s.count(5)<<endl;
 
 
     
