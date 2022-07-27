@@ -1,5 +1,7 @@
 #include<iostream>
 #include<vector>
+#include<deque>
+#include<list>
 using namespace std;
 
 
@@ -45,11 +47,48 @@ int main()
     // }
     // cout<<endl;
 
-    cout<<"Before clear size : "<<v.size(); 
-    v.clear(); // clear() just erase the elements stored imn vector & doesnt dumps the space.
-    cout<<endl;
-    cout<<"After clear size : "<<v.size();
-    cout<<endl;
+    // cout<<"Before clear size : "<<v.size(); 
+    // v.clear(); // clear() just erase the elements stored imn vector & doesnt dumps the space.
+    // cout<<endl;
+    // cout<<"After clear size : "<<v.size();
+    // cout<<endl;
+
+    // vector<int> a(5,1); // gives vector of 5 elements having value 1
+    // for(int i : a)
+    // {
+    //     cout<<i<<" ";
+    // }    
+    // cout<<endl;
+
+    // vector<int> b(a); // copies data of a into b
+    //     for(int i : a)
+    // {
+    //     cout<<i<<" ";
+    // }    
+    // cout<<endl;
+
+    // cout<<"First elemet at index 1 : "<<a.at(1);
+
+    // Deque gives functions to push and pop from both the ends
+    // deque<int> d;
+    // d.push_back(1);
+    // d.push_front(2);
+
+    // for(int i : d)
+    // {
+    //     cout<<i<<" ";
+    // }
+    // cout<<endl;
+
+    // cout<<"First elemet at index 1 : "<<d.at(1);
+
+    // d.pop_front();
+    // for(int i : d)
+    // {
+    //     cout<<i<<" ";
+    // }
+    // cout<<endl;
+
 
 
 
