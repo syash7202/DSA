@@ -4,6 +4,7 @@
 #include<list>
 #include<stack>
 #include<queue>
+#include<set>
 using namespace std;
 
 
@@ -135,40 +136,83 @@ int main()
 
     // cout<<endl;
 
-    priority_queue<int> maxi; // this is default case and creates max heap
-    maxi.push(0);
-    maxi.push(1);
-    maxi.push(5);
-    maxi.push(4);
+    // priority_queue<int> maxi; // this is default case and creates max heap
+    // maxi.push(0);
+    // maxi.push(1);
+    // maxi.push(5);
+    // maxi.push(4);
 
-    int n = maxi.size();
+    // int n = maxi.size();
 
-    for (int i = 0; i < n; i++)
+    // for (int i = 0; i < n; i++)
+    // {
+    //     cout<<maxi.top()<<" ";
+    //     maxi.pop();
+    // }
+
+    // cout<<endl;
+
+
+    // priority_queue<int, vector<int>, greater<int>> mini; // this creates max heap
+    
+    // mini.push(5);
+    // mini.push(1);
+    // mini.push(2);
+    // mini.push(0);
+
+    // int m = mini.size();
+
+    // for (int i = 0; i < m; i++)
+    // {
+    //     cout<<mini.top()<<" ";
+    //     mini.pop();
+    // }
+    
+    // cout<<endl;
+    
+    // set works on the BTS, only insert and delete options are available, no modifications in ordered set data is returned in sorted order. Only unique values are stored in a set.
+
+    set<int> s;
+
+    s.insert(5);
+    s.insert(5);
+    s.insert(5);
+    s.insert(5);
+    s.insert(1);
+    s.insert(1);
+    s.insert(1);
+    s.insert(1);
+    s.insert(6);
+    s.insert(6);
+    s.insert(6);
+    s.insert(6);
+    s.insert(6);
+    s.insert(6);
+
+    for(auto i : s)
     {
-        cout<<maxi.top()<<" ";
-        maxi.pop();
+        cout<<i<<endl;
     }
 
-    cout<<endl;
+    set<int>::iterator it =s.begin();
+    it++;
 
+    s.erase(it);
 
-    priority_queue<int, vector<int>, greater<int>> mini; // this creates max heap
-    
-    mini.push(5);
-    mini.push(1);
-    mini.push(2);
-    mini.push(0);
-
-    int m = mini.size();
-
-    for (int i = 0; i < m; i++)
+    for(auto i : s)
     {
-        cout<<mini.top()<<" ";
-        mini.pop();
+        cout<<i<<endl;
     }
+
+    cout<<"5 present or not : "<<s.count(5)<<endl;
+
+
     
-    cout<<endl;
-    
-    
+
+
+
+
+
+
     return 0;
 }
