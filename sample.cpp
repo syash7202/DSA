@@ -124,25 +124,50 @@ int main()
     // cout<<"\nEmpty or not : "<<s.empty();
     // cout<<endl;
 
-    queue<string> q;
-    q.push("Yash");
-    q.push("Sharma");
-    q.push("Go");
+    // queue<string> q;
+    // q.push("Yash");
+    // q.push("Sharma");
+    // q.push("Go");
 
-    cout<<"\nFirst Element : "<< q.front();
-    q.pop();
-    cout<<"\nFirst Element : "<< q.front();
+    // cout<<"\nFirst Element : "<< q.front();
+    // q.pop();
+    // cout<<"\nFirst Element : "<< q.front();
+
+    // cout<<endl;
+
+    priority_queue<int> maxi; // this is default case and creates max heap
+    maxi.push(0);
+    maxi.push(1);
+    maxi.push(5);
+    maxi.push(4);
+
+    int n = maxi.size();
+
+    for (int i = 0; i < n; i++)
+    {
+        cout<<maxi.top()<<" ";
+        maxi.pop();
+    }
 
     cout<<endl;
 
 
+    priority_queue<int, vector<int>, greater<int>> mini; // this creates max heap
+    
+    mini.push(5);
+    mini.push(1);
+    mini.push(2);
+    mini.push(0);
 
+    int m = mini.size();
+
+    for (int i = 0; i < m; i++)
+    {
+        cout<<mini.top()<<" ";
+        mini.pop();
+    }
     
-    
-    
-    
-    
-    
+    cout<<endl;
     
     
     return 0;
