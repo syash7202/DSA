@@ -1,6 +1,6 @@
 /*
     Input array is {1,2,3,4,5,6,7,8,9} print this array in wave form, i.e 147852369.
-
+    O(n*m)
 */
 
 
