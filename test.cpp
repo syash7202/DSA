@@ -111,42 +111,43 @@ using namespace std;
 //     return 0;
 // }
 
-int main()
-{
-    string s = "Let's take LeetCode contest";
+// Revese a string III
+// int main()
+// {
+//     string s = "Let's take LeetCode contest";
 
-    string str = "";
-    stack<char> stack;
+//     string str = "";
+//     stack<char> stack;
 
-    for (int i = 0; i < s.size(); i++)
-    {
-        if (s[i] != ' ')
-        {
-            stack.push(s[i]);
-        }
-        else
-        {
-            while (!stack.empty())
-            {
-                str += stack.top();
-                stack.pop();
-            }
-            str += ' ';
-        }
-    }
+//     for (int i = 0; i < s.size(); i++)
+//     {
+//         if (s[i] != ' ')
+//         {
+//             stack.push(s[i]);
+//         }
+//         else
+//         {
+//             while (!stack.empty())
+//             {
+//                 str += stack.top();
+//                 stack.pop();
+//             }
+//             str += ' ';
+//         }
+//     }
 
-    while (!stack.empty())
-    {
-        str += stack.top();
-        stack.pop();
-    }
+//     while (!stack.empty())
+//     {
+//         str += stack.top();
+//         stack.pop();
+//     }
 
-    for (int i = 0; i < str.length(); i++)
-    {
-        cout << str[i];
-    }
+//     for (int i = 0; i < str.length(); i++)
+//     {
+//         cout << str[i];
+//     }
 
-    cout << endl;
+//     cout << endl;
 
-    return 0;
-}
+//     return 0;
+// }
