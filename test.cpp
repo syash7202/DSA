@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <stack>
 using namespace std;
 
 //  leetcode   ->      https://leetcode.com/problems/search-insert-position/
@@ -67,44 +68,85 @@ using namespace std;
 //     return 0;
 // }
 
+// rotate 2d matrix
+// int main()
+// {
+//     vector<vector<int>> matrix = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+
+//     for (int i = 0; i < matrix.size(); i++) // transpose of a matrix
+//     {
+//         for (int j = i; j < matrix.size(); j++)
+//         {
+//             if (i != j)
+//             {
+//                 int temp = matrix[i][j];
+
+//                 matrix[i][j] = matrix[j][i];
+//                 matrix[j][i] = temp;
+//             }
+//         }
+//     }
+
+//     int col = matrix[0].size();
+//     for (int i = 0; i < matrix.size(); i++)
+//     {
+//         for (int j = 0; j < col / 2; j++)
+//         {
+//             int temp = matrix[i][j];
+
+//             matrix[i][j] = matrix[i][col - j - 1];
+//             matrix[i][col - j - 1] = temp;
+//         }
+//     }
+
+//     for (int i = 0; i < matrix.size(); i++)
+//     {
+//         for (int j = 0; j < matrix.size(); j++)
+//         {
+//             cout << matrix[i][j] << " ";
+//         }
+//         cout << endl;
+//     }
+
+//     return 0;
+// }
+
 int main()
 {
-    vector<vector<int>> matrix = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+    string s = "Let's take LeetCode contest";
 
-    for (int i = 0; i < matrix.size(); i++) // transpose of a matrix
+    string str = "";
+    stack<char> stack;
+
+    for (int i = 0; i < s.size(); i++)
     {
-        for (int j = i; j < matrix.size(); j++)
+        if (s[i] != ' ')
         {
-            if (i != j)
+            stack.push(s[i]);
+        }
+        else
+        {
+            while (!stack.empty())
             {
-                int temp = matrix[i][j];
-
-                matrix[i][j] = matrix[j][i];
-                matrix[j][i] = temp;
+                str += stack.top();
+                stack.pop();
             }
+            str += ' ';
         }
     }
 
-    int col = matrix[0].size();
-    for (int i = 0; i < matrix.size(); i++)
+    while (!stack.empty())
     {
-        for (int j = 0; j < col / 2; j++)
-        {
-            int temp = matrix[i][j];
-
-            matrix[i][j] = matrix[i][col - j - 1];
-            matrix[i][col - j - 1] = temp;
-        }
+        str += stack.top();
+        stack.pop();
     }
 
-    for (int i = 0; i < matrix.size(); i++)
+    for (int i = 0; i < str.length(); i++)
     {
-        for (int j = 0; j < matrix.size(); j++)
-        {
-            cout << matrix[i][j] << " ";
-        }
-        cout << endl;
+        cout << str[i];
     }
+
+    cout << endl;
 
     return 0;
 }
