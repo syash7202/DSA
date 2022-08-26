@@ -1,6 +1,4 @@
-#include <iostream>
-#include <vector>
-#include <stack>
+#include <bits/stdc++.h>
 using namespace std;
 
 //  leetcode   ->      https://leetcode.com/problems/search-insert-position/
@@ -151,3 +149,86 @@ using namespace std;
 
 //     return 0;
 // }
+
+// segmented sieve
+
+// vector<int> createSieve(int n)
+// {
+//     vector<int> ans;
+//     vector<bool> isPrime(n + 1, true); // sieve of eratosthenes O(n*log(logn))
+
+//     isPrime[0] = isPrime[1] = false;
+
+//     for (int i = 2; i < n; i++)
+//     {
+//         if (isPrime[i])
+//         {
+//             for (int j = 2 * i; j < n; j += i)
+//             {
+//                 isPrime[j] = false;
+//             }
+//         }
+//     }
+
+//     for (int i = 0; i < n; i++) // save prime nubers till sqrt(n) in ans.
+//     {
+//         if (isPrime[i])
+//         {
+//             ans.push_back(i);
+//         }
+//     }
+
+//     return ans;
+// }
+
+// void segmentedSieve(int l, int r)
+// {
+//     int rootR = int(sqrt(r));
+//     vector<bool> array(r - l + 1, true);
+//     vector<int> prime = createSieve(rootR);
+// }
+
+// int main()
+// {
+//     int l, r;
+//     cin >> l >> r;
+
+//     segmentedSieve(l, r);
+
+//     return 0;
+// }
+
+// Gcd of two numbers  gdc(a,b) = gcd(a-b,b) or gcd(a%b,b)  and lcm(a,b) * gcd(a,b) = a*b
+
+int gcd(int a, int b)
+{
+    if (a == 0)
+        return b;
+
+    if (b == 0)
+        return a;
+
+    while (a != b)
+    {
+        if (a > b)
+        {
+            a = a - b;
+        }
+        else
+        {
+            b = b - a;
+        }
+    }
+
+    return a;
+}
+
+int main()
+{
+    int a, b;
+    cin >> a >> b;
+
+    cout << gcd(a, b) << endl;
+
+    return 0;
+}
