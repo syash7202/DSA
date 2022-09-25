@@ -200,35 +200,63 @@ using namespace std;
 
 // Gcd of two numbers  gdc(a,b) = gcd(a-b,b) or gcd(a%b,b)  and lcm(a,b) * gcd(a,b) = a*b
 
-int gcd(int a, int b)
-{
-    if (a == 0)
-        return b;
+// int gcd(int a, int b)
+// {
+//     if (a == 0)
+//         return b;
 
-    if (b == 0)
-        return a;
+//     if (b == 0)
+//         return a;
 
-    while (a != b)
-    {
-        if (a > b)
-        {
-            a = a - b;
-        }
-        else
-        {
-            b = b - a;
-        }
-    }
+//     while (a != b)
+//     {
+//         if (a > b)
+//         {
+//             a = a - b;
+//         }
+//         else
+//         {
+//             b = b - a;
+//         }
+//     }
 
-    return a;
-}
+//     return a;
+// }
 
-int main()
-{
-    int a, b;
-    cin >> a >> b;
+// int main()
+// {
+//     int a, b;
+//     cin >> a >> b;
 
-    cout << gcd(a, b) << endl;
+//     cout << gcd(a, b) << endl;
 
-    return 0;
-}
+//     return 0;
+// }
+
+//
+
+// number of ordered pairs of given number n, i+j =n
+// int main()
+// {
+//     int num = 10, start = 0, end = num, count = 0;
+
+//     for (int i = 0; i <= num; i++)
+//     {
+//         if (start + end == num)
+//         {
+//             count++;
+//         }
+
+//         else if (start + end > num)
+//         {
+//             end--;
+//         }
+
+//         else
+//         {
+//             start++;
+//         }
+//     }
+//     cout << count << endl;
+//     return 0;
+// }
