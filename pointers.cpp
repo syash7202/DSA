@@ -4,6 +4,31 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+void update_pointer(int *p7)
+{
+    p7= p7 +1;
+    cout<<"p7++ : "<<p7<<endl;
+
+}
+
+void update_pointer_value(int *p7)
+{
+    (*p7)++;
+    cout<<"*p7++ : "<<*p7<<endl;
+
+}
+
+void getSum(int arr[], int size)
+{
+    int sum = 0;
+    for (int i = 0; i < size; i++)
+    {
+        sum+=arr[i];
+    }
+
+    cout<<"Sum : "<<sum<<endl;
+    
+}
 
 int main()
 {
@@ -75,6 +100,8 @@ cout<<"----------------------------------------"<<endl;
     cout<<"(*arr) +1   : "<< *arr+1 <<endl;
     cout<<"*(arr +1)  or arr[1] : "<< *(arr+1) <<endl;
 
+cout<<"----------------------------------------"<<endl;
+
     for (int i = 0; i < 10; i++)
     {
         cout<<*(arr + i)<<" ";  
@@ -95,10 +122,53 @@ cout<<"----------------------------------------"<<endl;
     cout<< "Size of *p6 : " << sizeof(*p6)<<endl; 
     cout<< "Size of &p6 : " << sizeof(&p6)<<endl; 
 
+cout<<"----------------------------------------"<<endl;
+cout<<"----------------------------------------"<<endl;
+
+
+    // pointer implementation of string
+    // Its diffrent from array 
+
+    char str[6] ="abcde"; 
+    char *sp1 = &str[0];
+
+    cout<< "*sp1 :" << *sp1<<endl;  // this prints a (first character of string)
+    cout<< "str :" << str <<endl;   // this should print address of first character (as in case of array) but prints whole string (till it finds '/0' i.e null character )
+
+    char str2 = 'y'; 
+    char *sp2 = &str2;
+    cout<<"str2 : "<<str2<<endl; // it may print only y if next character is /0 if not then it prints till it gets /0
 
 
 
 
-   
+cout<<"----------------------------------------"<<endl;
+cout<<"----------------------------------------"<<endl;
+
+
+    // Pointers and function
+    // when apointer is passed to a function change in value of pointer is not possible but changes in the value of the variable it is pointing to i possible.
+
+    int num7 =10;
+    int *p7 = &num7;
+
+    cout<<"Before p7 : "<<p7<<endl;
+    update_pointer(p7);
+    cout<<"After  p7 : "<<p7<<endl;
+    cout<<"*Before p7 : "<<*p7<<endl;
+    update_pointer_value(p7);
+    cout<<"After  *p7 : "<<*p7<<endl;
+
+    // by default when an array is passed to function not array but the pointer to the first cell or array address is passed.
+    // and the benefit of this we can pass partial array to a function
+
+    int arr2[6]= {1,2,3,4,5,6};
+    getSum(arr2+3,3);
+
+cout<<"----------------------------------------"<<endl;
+cout<<"----------------------------------------"<<endl;
+
+    
+
     return 0;
 }
