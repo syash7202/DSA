@@ -18,6 +18,12 @@ void update_pointer_value(int *p7)
 
 }
 
+void update_double_pointer(int** p9){
+    // p9 = p9 +1;  // no change
+    // *p9 = *p9 +1;  // yes, now it changes value at *p9 --> add of p8  
+    **p9 = **p9 +1;  // yes, now it changes value at **p9 --> num8  
+}
+
 void getSum(int arr[], int size)
 {
     int sum = 0;
@@ -167,6 +173,26 @@ cout<<"----------------------------------------"<<endl;
 
 cout<<"----------------------------------------"<<endl;
 cout<<"----------------------------------------"<<endl;
+
+    // Pointer to Pointer (double pointer)
+
+    int num8 =10;
+    int* p8 = &num8;
+    int** p9 = &p8;
+
+    cout<<" Before : "<<endl;
+    cout<<"num8 : " <<num8 <<endl;
+    cout<<"p8 : " <<p8 <<endl;
+    cout<<"p9 : " <<p9 <<endl;
+
+    update_double_pointer(p9);
+
+    cout<<" After : "<<endl;
+    cout<<"num8 : " <<num8 <<endl;
+    cout<<"p8 : " <<p8 <<endl;
+    cout<<"p9 : " <<p9 <<endl;
+
+
 
     
 
