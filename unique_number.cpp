@@ -2,7 +2,7 @@
 /*
 Give condition is size of array is -> 2m+1    (which is always odd bcoz every number will be present two times and only a single number is prsent one time which is unique number)
 
-Approach : Xor with the number itself gives ) and Xor of any number with the 0 is number itself.
+Approach : Xor with the number itself gives 0 and Xor of any number with the 0 is number itself.
 
 
 */
