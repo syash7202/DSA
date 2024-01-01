@@ -1,6 +1,23 @@
  #include <iostream>  
  using namespace std;
 
+// recrusive code function for line 168
+int sumWithRecursion(int arr[],int size){
+    if(size==0){
+        return 0;
+    }
+    if(size==1){
+        return arr[0];
+    }
+    else{
+        int remainingarr=sumWithRecursion(arr+1, size-1);
+        int ans = arr[0] + remainingarr;
+        return ans;
+    }
+
+}
+
+
  int main()
  {
 
@@ -145,6 +162,19 @@
 // cout<<"Min : "<<min<<endl;
 
 // this was a test run
+
+//  sum of elements in array using recursion 
+
+    int arr[10];
+    for (int i = 0; i < 10; i++)
+    {
+        arr[i]= rand()%10;
+        cout<<arr[i]<<" ";
+    }
+
+    cout<<endl;
+
+    cout<<sumWithRecursion(arr,10)<<endl;
 
      return 0;
 
