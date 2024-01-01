@@ -30,17 +30,17 @@ using namespace std;
     
 // }
 
-bool binary_search_Recursive(int array[], int start, int end, int key)
+int binary_search_Recursive(int array[], int start, int end, int key)
 {
     if (start>end)
     {
-        return false;
+        return -1;
     }
 
     int mid = start + ((end -start)/2);
     if (array[mid]==key)
     {
-        return true;
+        return mid;
     }
 
     if (array[mid]<key)
@@ -68,9 +68,9 @@ int main()
 
     int start=0;
     int even_index = binary_search_Recursive(even,start,5,5);
-    cout<<even_index<<endl; // only tell present or not
+    cout<<even_index<<endl; 
     int odd_index= binary_search_Recursive(odd,start,6,2);
-    cout<<odd_index<<endl; // only tell present or not
+    cout<<odd_index<<endl; 
 
 
     return 0;
