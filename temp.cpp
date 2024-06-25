@@ -165,16 +165,59 @@ int sumWithRecursion(int arr[],int size){
 
 //  sum of elements in array using recursion 
 
-    int arr[10];
-    for (int i = 0; i < 10; i++)
+    // int arr[10];
+    // for (int i = 0; i < 10; i++)
+    // {
+    //     arr[i]= rand()%10;
+    //     cout<<arr[i]<<" ";
+    // }
+
+    // cout<<endl;
+
+    // cout<<sumWithRecursion(arr,10)<<endl;
+
+    string word1 = "abc", word2 = "pqr";
+
+    int len1 = word1.length() -1;
+    int len2 = word2.length() -1;
+
+    cout<<len1<<" "<<len2<<endl;
+
+    string ans;
+
+    while (len1>-1 && len2>-1)
     {
-        arr[i]= rand()%10;
-        cout<<arr[i]<<" ";
+        for (int i = 0; i < len1+len2; i++)
+        {
+            if (i==0 || i%2 ==0)
+            {
+                ans+=word1[i];
+                len1--;
+            }
+            else{
+                ans+=word2[i];
+                len2--;
+            }
+            
+        }
+         
+        
     }
 
-    cout<<endl;
+    while (len1>-1)
+    {
+        ans+=word1[len1--];
+    }
+    
+    while (len2>-1)
+    {
+        ans+=word2[len1--];
+    }
+    
 
-    cout<<sumWithRecursion(arr,10)<<endl;
+    // ans+="abcdef";
+    cout<<ans<<endl;
+
 
      return 0;
 

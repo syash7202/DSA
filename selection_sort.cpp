@@ -1,24 +1,24 @@
 #include<iostream>
 using namespace std;
 
+void selectionSort(int array[], int size){
 
-void selectionSort(int array[], int size)
-{
     for (int i = 0; i < size-1; i++)
     {
-        int minIndex=i;
+        int minIndex = i;
+
         for (int j = i+1; j < size; j++)
         {
-            if (array[minIndex]>array[j])
+            if (array[j]<array[minIndex])
             {
                 minIndex=j;
             }
-            swap(array[i],array[minIndex]);
-        }
-        
+            
+            swap(array[minIndex],array[i]);
+        }   
     }
-    
 }
+
 
 void printArray(int array[], int size)
 {
