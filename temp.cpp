@@ -1,4 +1,5 @@
  #include <iostream>  
+ #include<vector>
  using namespace std;
 
 // recrusive code function for line 168
@@ -176,49 +177,80 @@ int sumWithRecursion(int arr[],int size){
 
     // cout<<sumWithRecursion(arr,10)<<endl;
 
-    string word1 = "abc", word2 = "pqr";
 
-    int len1 = word1.length() -1;
-    int len2 = word2.length() -1;
+    //string function
 
-    cout<<len1<<" "<<len2<<endl;
+    // string word1 = "abc", word2 = "pqr";
 
-    string ans;
+    // int len1 = word1.length() -1;
+    // int len2 = word2.length() -1;
 
-    while (len1>-1 && len2>-1)
-    {
-        for (int i = 0; i < len1+len2; i++)
-        {
-            if (i==0 || i%2 ==0)
-            {
-                ans+=word1[i];
-                len1--;
-            }
-            else{
-                ans+=word2[i];
-                len2--;
-            }
+    // cout<<len1<<" "<<len2<<endl;
+
+    // string ans;
+
+    // while (len1>-1 && len2>-1)
+    // {
+    //     for (int i = 0; i < len1+len2; i++)
+    //     {
+    //         if (i==0 || i%2 ==0)
+    //         {
+    //             ans+=word1[i];
+    //             len1--;
+    //         }
+    //         else{
+    //             ans+=word2[i];
+    //             len2--;
+    //         }
             
-        }
+    //     }
          
         
+    // }
+
+    // while (len1>-1)
+    // {
+    //     ans+=word1[len1--];
+    // }
+    
+    // while (len2>-1)
+    // {
+    //     ans+=word2[len1--];
+    // }
+    
+
+    // // ans+="abcdef";
+    // cout<<ans<<endl;
+
+
+    int n=6, k=2;
+
+    vector<int> arr;
+
+    for (int i = 1; i <= n; i++)
+    {
+        arr.push_back(i);
     }
 
-    while (len1>-1)
+
+
+    for(int element : arr){
+        cout<<element<<" ";
+    }
+
+    int ans =0;
+    while (arr.size() > 1)
     {
-        ans+=word1[len1--];
+        ans = (ans+k)%arr.size();
+        cout<<arr[ans];
+        arr.erase(arr.begin() + ans);
     }
     
-    while (len2>-1)
-    {
-        ans+=word2[len1--];
-    }
     
+    cout<<endl;
+    cout<<arr[0];    
 
-    // ans+="abcdef";
-    cout<<ans<<endl;
-
-
+    cout<<endl;
      return 0;
 
  }

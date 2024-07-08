@@ -1,17 +1,20 @@
 #include<iostream>
 using namespace std;
 
-class Node {
-    public:
-    int data;
-    Node* next;
 
-    Node(int data){
-        this -> data = data;
-        this -> next = NULL;
+class Dnode {
+public:
+    int data;
+    Dnode* prev;
+    Dnode* next;
+
+    Dnode(int data) {
+        this->data= data;
+        this->prev=nullptr;
+        this->next=nullptr;
     }
 
-    ~Node() {
+    ~Dnode() {
         int value = this->data;
         //free memory
         if (this->next !=NULL)
@@ -21,33 +24,22 @@ class Node {
         }
         
         cout<<"memory is free for data : "<<value<<endl;
-    }
+    }    
+
 };
 
-void insertAtHead(Node* &head, int data){
-
-    Node* temp = new Node(data);
-    temp -> next = head;
-    head = temp;
-
-}
-
-void insertAtTail(Node * &tail, int data){
-
-    Node* temp = new Node(data);
-    tail -> next = temp;
-    tail = tail -> next;
-}
-
-void inserteAtPosition(Node* &head, Node* tail, int data, int position){
+void insertinDL(int data,int position,  Dnode* &head, Dnode* &tail){
 
     if (position == 1)
     {
-        insertAtHead(head,data);
+        Dnode* temp = new Dnode(data);
+        temp -> next = head;
+        head->prev= temp;
+        head = temp;
         return;
     }
 
-    Node* temp = head;
+    Dnode* temp = head;
     int count = 1;
     
     while(count<position-1){
@@ -56,20 +48,27 @@ void inserteAtPosition(Node* &head, Node* tail, int data, int position){
     }
 
     if(temp->next == NULL){
-        insertAtTail(tail,data);
-        return;
-    }
-    Node* insertNode = new Node(data);
-    insertNode->next = temp->next;
-    temp->next = insertNode;
 
+    Dnode* temp = new Dnode(data);
+    tail -> next = temp;
+    temp->prev = tail;
+    tail = tail -> next;
+    return;
+
+    }
+    
+    Dnode* insertNode = new Dnode(data);
+    insertNode->next = temp->next;
+    insertNode->prev = temp;
+    temp->next = insertNode;
 }
 
+void deleteDnode(int position, Dnode* &head, Dnode* &tail) {
 
-void deleteNode(int position, Node* &head, Node* &tail) {
     if (position == 1) {
-        Node* temp = head;
+        Dnode* temp = head;
         head = head->next;
+        head->prev= nullptr;
         temp->next = NULL;
         delete temp;
 
@@ -77,8 +76,8 @@ void deleteNode(int position, Node* &head, Node* &tail) {
             tail = NULL;
         }
     } else {
-        Node* curr = head;
-        Node* prev = NULL;
+        Dnode* curr = head;
+        Dnode* prev = NULL;
 
         int count = 1;
         while (count < position) {
@@ -98,10 +97,9 @@ void deleteNode(int position, Node* &head, Node* &tail) {
     }
 }
 
+void printDL(Dnode* &head){
 
-void printLL(Node* &head){
-
-    Node* temp = head;
+    Dnode* temp = head;
 
     while (temp != NULL)
     {
@@ -115,25 +113,24 @@ void printLL(Node* &head){
 
 int main(){
 
-    Node* node1 = new Node(10);
-    Node* head = node1;
-    Node* tail = node1;
+    Dnode* node1 = new Dnode(20);
+    Dnode* head = node1;
+    Dnode* tail = node1;
 
-    insertAtHead(head,100);
-    insertAtTail(tail,50);
-    inserteAtPosition(head,tail,5,1);
-    inserteAtPosition(head,tail,20,2);
-    inserteAtPosition(head,tail,40,4);
-    inserteAtPosition(head,tail,60,5);
-    inserteAtPosition(head,tail,70,6);
-    printLL(head);
-
-    deleteNode(1,head,tail);
-    deleteNode(7,head,tail);
-    deleteNode(3,head,tail);
+    insertinDL(5,1,head,tail);
+    insertinDL(10,2,head,tail);
+    insertinDL(15,2,head,tail);
+    insertinDL(25,5,head,tail);
+    insertinDL(30,6,head,tail);
+    printDL(head);
+    cout<<endl;
 
 
-    printLL(head);
+    deleteDnode(1,head,tail);
+    deleteDnode(5,head,tail);
+    deleteDnode(3,head,tail);
+
+    printDL(head);
     cout<<endl;
     
     cout<<"head : "<<head->data<<" "<<"tail :"<<tail->data;
