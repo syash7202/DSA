@@ -10,6 +10,18 @@ class Node {
         this -> data = data;
         this -> next = NULL;
     }
+
+    ~Node() {
+        int value = this->data;
+        //free memory
+        if (this->next !=NULL)
+        {
+            delete next;
+            this->next = NULL;
+        }
+        
+        cout<<"memory is free for data : "<<value<<endl;
+    }
 };
 
 void insertAtHead(Node* &head, int data){
@@ -53,6 +65,40 @@ void inserteAtPosition(Node* &head, Node* tail, int data, int position){
 
 }
 
+
+void deleteNode(int position, Node* &head, Node* &tail) {
+    if (position == 1) {
+        Node* temp = head;
+        head = head->next;
+        temp->next = NULL;
+        delete temp;
+
+        if (head == NULL) {
+            tail = NULL;
+        }
+    } else {
+        Node* curr = head;
+        Node* prev = NULL;
+
+        int count = 1;
+        while (count < position) {
+            prev = curr;
+            curr = curr->next;
+            count++;
+        }
+
+        prev->next = curr->next;
+
+        if (curr->next == NULL) {
+            tail = prev;
+        }
+
+        curr->next = NULL;
+        delete curr;
+    }
+}
+
+
 void printLL(Node* &head){
 
     Node* temp = head;
@@ -62,6 +108,7 @@ void printLL(Node* &head){
     cout<<temp->data<<" ";
     temp = temp->next; 
     }
+    cout<<endl;
     
 }
 
@@ -80,6 +127,9 @@ int main(){
     inserteAtPosition(head,tail,60,5);
     inserteAtPosition(head,tail,70,6);
     printLL(head);
+
+    deleteNode(1,head,tail);
+    deleteNode(7,head,tail);
 
 
     cout<<endl;
